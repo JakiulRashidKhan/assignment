@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<body>
+<p id="showMessage"></p>
+<div id="output">
+	<p id="inputData"></p>
+	<button  id="deleteButton" style="border: 2px solid green; padding: 10px 12px; color: yellowgreen;">Delete</button>
+</div>
+
+<script>
+
+let submit = document.getElementById('deleteButton');
+submit.addEventListener('click',function(){
+	let inputField = '<input type="text" placeholder="Type Delete and press enter" onchange="DeleteField(this.value)">';
+
+	let newInput = document.getElementById('inputData');
+	newInput.innerHTML = inputField;
+
+})
+
+
+function DeleteField(value) {
+  if(value == "Delete" || value == "delete"){
+  	document.getElementById("output").style.visibility='hidden';
+  	document.getElementById("showMessage").innerHTML='Successfully Delete';
+  }else{
+  	alert('You Press Wrong Keyword');
+  }
+}
+
+</script>
+</body>
+</html>
